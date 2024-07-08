@@ -1,0 +1,363 @@
+# 1.This file shows the parsed IR info when graph evaluating failed to help find the problem.
+# 2.You can search the last `------------------------>` to the node which is inferred failed.
+# 3.Refer to https://www.mindspore.cn/search?inputValue=analyze_fail.dat to get more instructions.
+# ===============================================================================
+
+# [No.1] Default_wrapper.1
+# In file train.py:99/    def construct(self, data, label):/
+funcgraph fg_1(
+        %para1 : Tensor(F32)[16, 30, 128, 88]    # data
+        , %para2 : Tensor(I64)[16]    # label
+        , %para3 : Ref[Tensor(I32)][]    # step
+        , %para4 : Ref[Tensor(F32)][32, 1, 5, 5]    # conv1.weight
+        , %para5 : Ref[Tensor(F32)][32]    # bn1.gamma
+        , %para6 : Ref[Tensor(F32)][32]    # bn1.beta
+        , %para7 : Ref[Tensor(F32)][32, 32, 3, 3]    # conv2.weight
+        , %para8 : Ref[Tensor(F32)][64, 32, 3, 3]    # conv3.weight
+        , %para9 : Ref[Tensor(F32)][64, 64, 3, 3]    # conv4.weight
+        , %para10 : Ref[Tensor(F32)][128, 64, 3, 3]    # conv5.weight
+        , %para11 : Ref[Tensor(F32)][128, 128, 3, 3]    # conv6.weight
+        , %para12 : Ref[Tensor(F32)][256, 128, 3, 3]    # conv7.weight
+        , %para13 : Ref[Tensor(F32)][256, 256, 3, 3]    # conv8.weight
+        , %para14 : Ref[Tensor(F32)][256, 256]    # fc.weight
+        , %para15 : Ref[Tensor(F32)][256]    # fc.bias
+        , %para16 : Ref[Tensor(F32)][31, 256, 200]    # bn_neck.fc_bin
+        , %para17 : Ref[Tensor(F32)][7936]    # bn_neck.bn1d.gamma
+        , %para18 : Ref[Tensor(F32)][7936]    # bn_neck.bn1d.beta
+        , %para19 : Ref[Tensor(F32)][32, 1, 5, 5]    # exp_avg.conv1.weight
+        , %para20 : Ref[Tensor(F32)][32]    # exp_avg.bn1.gamma
+        , %para21 : Ref[Tensor(F32)][32]    # exp_avg.bn1.beta
+        , %para22 : Ref[Tensor(F32)][32, 32, 3, 3]    # exp_avg.conv2.weight
+        , %para23 : Ref[Tensor(F32)][64, 32, 3, 3]    # exp_avg.conv3.weight
+        , %para24 : Ref[Tensor(F32)][64, 64, 3, 3]    # exp_avg.conv4.weight
+        , %para25 : Ref[Tensor(F32)][128, 64, 3, 3]    # exp_avg.conv5.weight
+        , %para26 : Ref[Tensor(F32)][128, 128, 3, 3]    # exp_avg.conv6.weight
+        , %para27 : Ref[Tensor(F32)][256, 128, 3, 3]    # exp_avg.conv7.weight
+        , %para28 : Ref[Tensor(F32)][256, 256, 3, 3]    # exp_avg.conv8.weight
+        , %para29 : Ref[Tensor(F32)][256, 256]    # exp_avg.fc.weight
+        , %para30 : Ref[Tensor(F32)][256]    # exp_avg.fc.bias
+        , %para31 : Ref[Tensor(F32)][31, 256, 200]    # exp_avg.bn_neck.fc_bin
+        , %para32 : Ref[Tensor(F32)][7936]    # exp_avg.bn_neck.bn1d.gamma
+        , %para33 : Ref[Tensor(F32)][7936]    # exp_avg.bn_neck.bn1d.beta
+        , %para34 : Ref[Tensor(F32)][32, 1, 5, 5]    # exp_avg_sq.conv1.weight
+        , %para35 : Ref[Tensor(F32)][32]    # exp_avg_sq.bn1.gamma
+        , %para36 : Ref[Tensor(F32)][32]    # exp_avg_sq.bn1.beta
+        , %para37 : Ref[Tensor(F32)][32, 32, 3, 3]    # exp_avg_sq.conv2.weight
+        , %para38 : Ref[Tensor(F32)][64, 32, 3, 3]    # exp_avg_sq.conv3.weight
+        , %para39 : Ref[Tensor(F32)][64, 64, 3, 3]    # exp_avg_sq.conv4.weight
+        , %para40 : Ref[Tensor(F32)][128, 64, 3, 3]    # exp_avg_sq.conv5.weight
+        , %para41 : Ref[Tensor(F32)][128, 128, 3, 3]    # exp_avg_sq.conv6.weight
+        , %para42 : Ref[Tensor(F32)][256, 128, 3, 3]    # exp_avg_sq.conv7.weight
+        , %para43 : Ref[Tensor(F32)][256, 256, 3, 3]    # exp_avg_sq.conv8.weight
+        , %para44 : Ref[Tensor(F32)][256, 256]    # exp_avg_sq.fc.weight
+        , %para45 : Ref[Tensor(F32)][256]    # exp_avg_sq.fc.bias
+        , %para46 : Ref[Tensor(F32)][31, 256, 200]    # exp_avg_sq.bn_neck.fc_bin
+        , %para47 : Ref[Tensor(F32)][7936]    # exp_avg_sq.bn_neck.bn1d.gamma
+        , %para48 : Ref[Tensor(F32)][7936]    # exp_avg_sq.bn_neck.bn1d.beta
+        , %para49 : Ref[Tensor(F32)][7936]    # bn_neck.bn1d.moving_mean
+        , %para50 : Ref[Tensor(F32)][7936]    # bn_neck.bn1d.moving_variance
+        , %para51 : Ref[Tensor(F32)][]    # learning_rate
+        , %para52 : Ref[Tensor(I32)][1]    # global_step
+        , %para53 : Ref[Tensor(F32)][32]    # bn1.moving_mean
+        , %para54 : Ref[Tensor(F32)][32]    # bn1.moving_variance
+    ) {
+
+#------------------------> 0
+    %1 = FuncGraph::fg_39(%para1, %para2)    #(Tensor(F32)[16, 30, 128, 88], Tensor(I64)[16])    # fg_39=Default.39 #scope: Default
+#[CNode]46
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default
+      # In file train.py:106/        return ops.depend(loss, self.optimizer(grads))/#[CNode]47
+}
+# order:
+#   1: @Default_wrapper.1:[CNode]46{[0]: ValueNode<FuncGraph> Default.39, [1]: data, [2]: label}
+#   2: @Default_wrapper.1:[CNode]47{[0]: ValueNode<Primitive> Return, [1]: [CNode]46}
+
+
+# [No.2] Default.39
+# In file train.py:99/    def construct(self, data, label):/
+funcgraph fg_39[fg_1](
+        %para55 : Tensor(F32)[16, 30, 128, 88]    # data
+        , %para56 : Tensor(I64)[16]    # label
+    ) {
+    %1 : Tensor(F32)[31] = FuncGraph::fg_36(%para55, %para56)    #(Tensor(F32)[16, 30, 128, 88], Tensor(I64)[16])    # fg_36=WithLossCell.36 #scope: Default
+      # In file train.py:101/        loss = self.network(data, label)/#loss
+    %2 : FuncNoShape = UnpackGraphPrimitive::UnpackGraph{prim_type=1}(FuncGraph::fg_36, %para55, %para56)    #(FuncNoShape, Tensor(F32)[16, 30, 128, 88], Tensor(I64)[16])    # fg_36=WithLossCell.36 #scope: Default
+      # In file train.py:102/        grads = self.grad(self.network, weights)(data, label)/#grads
+    %3 : Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)) = Primitive::MakeTuple{prim_type=1}(%para4, %para5, %para6, %para7, %para8, %para9, %para10, %para11, %para12, %para13, %para14, %para15, %para16, %para17, %para18)    #(Ref[Tensor(F32)][32, 1, 5, 5], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32, 32, 3, 3], Ref[Tensor(F32)][64, 32, 3, 3], Ref[Tensor(F32)][64, 64, 3, 3], Ref[Tensor(F32)][128, 64, 3, 3], Ref[Tensor(F32)][128, 128, 3, 3], Ref[Tensor(F32)][256, 128, 3, 3], Ref[Tensor(F32)][256, 256, 3, 3], Ref[Tensor(F32)][256, 256], Ref[Tensor(F32)][256], Ref[Tensor(F32)][31, 256, 200], Ref[Tensor(F32)][7936], Ref[Tensor(F32)][7936]) #scope: Default
+      # In file train.py:100/        weights = self.weights/#[CNode]48
+    %4 : FuncNoShape = DoSignaturePrimitive::S-Prim-grad{prim_type=1}(%2, %3)    #(FuncNoShape, Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936))) #scope: Default
+      # In file train.py:102/        grads = self.grad(self.network, weights)(data, label)/#grads
+    %5 : Tuple[Tensor(F32)*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)) = %4(%para55, %para56)    #(Tensor(F32)[16, 30, 128, 88], Tensor(I64)[16]) #scope: Default
+      # In file train.py:102/        grads = self.grad(self.network, weights)(data, label)/#grads
+
+#------------------------> 1
+    %6 = FuncGraph::fg_40(%5)    #(Tuple[Tensor(F32)*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)))    # fg_40=RiemannianAdam.40 #scope: Default
+      # In file train.py:106/        return ops.depend(loss, self.optimizer(grads))/#[CNode]49
+    %7 = DoSignaturePrimitive::S-Prim-Depend{prim_type=1}[side_effect_propagate=I64(1)](%1, %6)    #(Tensor(F32)[31], Undefined) #scope: Default
+      # In file train.py:106/        return ops.depend(loss, self.optimizer(grads))/#[CNode]50
+    Primitive::Return{prim_type=1}(%7)    #(Undefined) #scope: Default
+      # In file train.py:106/        return ops.depend(loss, self.optimizer(grads))/#[CNode]51
+}
+# order:
+#   1: @Default.39:loss{[0]: ValueNode<FuncGraph> WithLossCell.36, [1]: data, [2]: label}
+#   2: @Default.39:grads{[0]: ValueNode<UnpackGraphPrimitive> UnpackGraph, [1]: ValueNode<FuncGraph> WithLossCell.36, [2]: data, [3]: label}
+#   3: @Default.39:grads{[0]: ValueNode<DoSignaturePrimitive> S-Prim-grad, [1]: grads, [2]: [CNode]48}
+#   4: @Default.39:grads{[0]: grads, [1]: data, [2]: label}
+#   5: @Default.39:[CNode]49{[0]: ValueNode<FuncGraph> RiemannianAdam.40, [1]: grads}
+#   6: @Default.39:[CNode]50{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Depend, [1]: loss, [2]: [CNode]49}
+#   7: @Default.39:[CNode]51{[0]: ValueNode<Primitive> Return, [1]: [CNode]50}
+
+
+# [No.3] RiemannianAdam.40
+# In file train.py:47/    def construct(self, gradients):/
+funcgraph fg_40[fg_1](
+        %para57 : Tuple[Tensor(F32)*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936))    # gradients
+    ) {
+
+#------------------------> 2
+    %1 = FuncGraph::fg_41(I64(0), %para3, None)    #(I64NoShape, Ref[Tensor(I32)][], NoneTypeNoShape)    # fg_41=↵RiemannianAdam.41 #scope: Default
+      # In file train.py:106/        return ops.depend(loss, self.optimizer(grads))/#[CNode]52
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]53
+}
+# order:
+#   1: @RiemannianAdam.40:learning_rate{[0]: ValueNode<FuncGraph> get_lr.54}
+#   2: @RiemannianAdam.40:[CNode]55{[0]: ValueNode<DoSignaturePrimitive> S-Prim-zip_operation, [1]: [CNode]56, [2]: [CNode]57, [3]: [CNode]58, [4]: gradients}
+#   3: @RiemannianAdam.40:[CNode]59{[0]: ValueNode<FuncGraph> ms_len.31, [1]: [CNode]55}
+#   4: @RiemannianAdam.40:[CNode]53{[0]: ValueNode<Primitive> Return, [1]: [CNode]52}
+#   5: @RiemannianAdam.40:[CNode]60{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> ClassMember: 'Namespace:__main__..<RiemannianAdam::139827487331168>', [2]: ValueNode<Symbol> add}
+#   6: @RiemannianAdam.40:[CNode]52{[0]: ValueNode<FuncGraph> ↵RiemannianAdam.41, [1]: ValueNode<Int64Imm> 0, [2]: step, [3]: ValueNode<None> None}
+
+
+# [No.4] ↵RiemannianAdam.41
+# In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/
+funcgraph fg_41[fg_40](
+        %para58 : I64NoShape    # @[CNode]42
+        , %para59 : Ref[Tensor(I32)][]    # фstep
+        , %para60 : NoneTypeNoShape    # фsuccess
+    ) {
+    %1 : $(RiemannianAdam.40):Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)) = Primitive::MakeTuple{prim_type=1}(%para19, %para20, %para21, %para22, %para23, %para24, %para25, %para26, %para27, %para28, %para29, %para30, %para31, %para32, %para33)    #(Ref[Tensor(F32)][32, 1, 5, 5], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32, 32, 3, 3], Ref[Tensor(F32)][64, 32, 3, 3], Ref[Tensor(F32)][64, 64, 3, 3], Ref[Tensor(F32)][128, 64, 3, 3], Ref[Tensor(F32)][128, 128, 3, 3], Ref[Tensor(F32)][256, 128, 3, 3], Ref[Tensor(F32)][256, 256, 3, 3], Ref[Tensor(F32)][256, 256], Ref[Tensor(F32)][256], Ref[Tensor(F32)][31, 256, 200], Ref[Tensor(F32)][7936], Ref[Tensor(F32)][7936]) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]56
+    %2 : $(RiemannianAdam.40):Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)) = Primitive::MakeTuple{prim_type=1}(%para34, %para35, %para36, %para37, %para38, %para39, %para40, %para41, %para42, %para43, %para44, %para45, %para46, %para47, %para48)    #(Ref[Tensor(F32)][32, 1, 5, 5], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32, 32, 3, 3], Ref[Tensor(F32)][64, 32, 3, 3], Ref[Tensor(F32)][64, 64, 3, 3], Ref[Tensor(F32)][128, 64, 3, 3], Ref[Tensor(F32)][128, 128, 3, 3], Ref[Tensor(F32)][256, 128, 3, 3], Ref[Tensor(F32)][256, 256, 3, 3], Ref[Tensor(F32)][256, 256], Ref[Tensor(F32)][256], Ref[Tensor(F32)][31, 256, 200], Ref[Tensor(F32)][7936], Ref[Tensor(F32)][7936]) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]57
+    %3 : $(RiemannianAdam.40):Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)) = Primitive::MakeTuple{prim_type=1}(%para4, %para5, %para6, %para7, %para8, %para9, %para10, %para11, %para12, %para13, %para14, %para15, %para16, %para17, %para18)    #(Ref[Tensor(F32)][32, 1, 5, 5], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32, 32, 3, 3], Ref[Tensor(F32)][64, 32, 3, 3], Ref[Tensor(F32)][64, 64, 3, 3], Ref[Tensor(F32)][128, 64, 3, 3], Ref[Tensor(F32)][128, 128, 3, 3], Ref[Tensor(F32)][256, 128, 3, 3], Ref[Tensor(F32)][256, 256, 3, 3], Ref[Tensor(F32)][256, 256], Ref[Tensor(F32)][256], Ref[Tensor(F32)][31, 256, 200], Ref[Tensor(F32)][7936], Ref[Tensor(F32)][7936]) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:53/        params = self.parameters/#[CNode]58
+    %4 : $(RiemannianAdam.40):Tuple[Tuple[Tensor(F32)*4]*15]TupleShape(TupleShape((32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5)), TupleShape((32), (32), (32), (32)), TupleShape((32), (32), (32), (32)), TupleShape((32, 32, 3, 3), (32, 32, 3, 3), (32, 32, 3, 3), (32, 32, 3, 3)), TupleShape((64, 32, 3, 3), (64, 32, 3, 3), (64, 32, 3, 3), (64, 32, 3, 3)), TupleShape((64, 64, 3, 3), (64, 64, 3, 3), (64, 64, 3, 3), (64, 64, 3, 3)), TupleShape((128, 64, 3, 3), (128, 64, 3, 3), (128, 64, 3, 3), (128, 64, 3, 3)), TupleShape((128, 128, 3, 3), (128, 128, 3, 3), (128, 128, 3, 3), (128, 128, 3, 3)), TupleShape((256, 128, 3, 3), (256, 128, 3, 3), (256, 128, 3, 3), (256, 128, 3, 3)), TupleShape((256, 256, 3, 3), (256, 256, 3, 3), (256, 256, 3, 3), (256, 256, 3, 3)), TupleShape((256, 256), (256, 256), (256, 256), (256, 256)), TupleShape((256), (256), (256), (256)), TupleShape((31, 256, 200), (31, 256, 200), (31, 256, 200), (31, 256, 200)), TupleShape((7936), (7936), (7936), (7936)), TupleShape((7936), (7936), (7936), (7936))) = DoSignaturePrimitive::S-Prim-zip_operation{prim_type=1}(%1, %2, %3, %para57)    #(Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)), Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)), Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)), Tuple[Tensor(F32)*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936))) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]55
+    %5 : $(RiemannianAdam.40):I64NoShape = FuncGraph::fg_31(%4)    #(Tuple[Tuple[Tensor(F32)*4]*15]TupleShape(TupleShape((32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5)), TupleShape((32), (32), (32), (32)), TupleShape((32), (32), (32), (32)), TupleShape((32, 32, 3, 3), (32, 32, 3, 3), (32, 32, 3, 3), (32, 32, 3, 3)), TupleShape((64, 32, 3, 3), (64, 32, 3, 3), (64, 32, 3, 3), (64, 32, 3, 3)), TupleShape((64, 64, 3, 3), (64, 64, 3, 3), (64, 64, 3, 3), (64, 64, 3, 3)), TupleShape((128, 64, 3, 3), (128, 64, 3, 3), (128, 64, 3, 3), (128, 64, 3, 3)), TupleShape((128, 128, 3, 3), (128, 128, 3, 3), (128, 128, 3, 3), (128, 128, 3, 3)), TupleShape((256, 128, 3, 3), (256, 128, 3, 3), (256, 128, 3, 3), (256, 128, 3, 3)), TupleShape((256, 256, 3, 3), (256, 256, 3, 3), (256, 256, 3, 3), (256, 256, 3, 3)), TupleShape((256, 256), (256, 256), (256, 256), (256, 256)), TupleShape((256), (256), (256), (256)), TupleShape((31, 256, 200), (31, 256, 200), (31, 256, 200), (31, 256, 200)), TupleShape((7936), (7936), (7936), (7936)), TupleShape((7936), (7936), (7936), (7936))))    # fg_31=ms_len.31 #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]59
+    %6 : BoolNoShape = MultitypeFuncGraph::less{(Tensor, Number), (Tensor, Tensor), (Number, Tensor), (String, String), (Number, Number)}(%para58, %5)    #(I64NoShape, I64NoShape) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]61
+    %7 : FuncNoShape = Primitive::Switch{prim_type=1}(%6, FuncGraph::fg_43, FuncGraph::fg_62)    #(BoolNoShape, FuncNoShape, FuncNoShape)    # fg_43=↻RiemannianAdam.43, fg_62=↓RiemannianAdam.62 #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]63
+
+#------------------------> 3
+    %8 = %7() #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]64
+    Primitive::Return{prim_type=1}(%8)    #(Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]65
+}
+# order:
+#   1: @↵RiemannianAdam.41:[CNode]61{[0]: ValueNode<MultitypeFuncGraph> less.32, [1]: @[CNode]42, [2]: [CNode]59}
+#   2: @↵RiemannianAdam.41:[CNode]63{[0]: ValueNode<Primitive> Switch, [1]: [CNode]61, [2]: ValueNode<FuncGraph> ↻RiemannianAdam.43, [3]: ValueNode<FuncGraph> ↓RiemannianAdam.62}
+#   3: @↵RiemannianAdam.41:[CNode]64{[0]: [CNode]63}
+#   4: @↵RiemannianAdam.41:[CNode]65{[0]: ValueNode<Primitive> Return, [1]: [CNode]64}
+
+
+# [No.5] ↻RiemannianAdam.43
+# In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/
+funcgraph fg_43[fg_41](
+) {
+    %1 : I64NoShape = MultitypeFuncGraph::add{(COOTensor, COOTensor), (CSRTensor, CSRTensor), (Number, Number), (String, String), (Tensor, List), (Tuple, Tuple), (Tensor, Number), (Number, Tensor), (Tuple, Tensor), (Tensor, Tuple), (COOTensor, Tensor), (List, List), (Tensor, COOTensor), (Tensor, Tensor), (List, Tensor), (RowTensor, Tensor), (NoneType, NoneType)}(%para58, I64(1))    #(I64NoShape, I64NoShape) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]42
+    %2 : I64NoShape = Primitive::stop_gradient{prim_type=1}(%1)    #(I64NoShape) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:106/        return ops.depend(loss, self.optimizer(grads))/#[CNode]66
+    %3 : $(RiemannianAdam.40):Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)) = Primitive::MakeTuple{prim_type=1}(%para19, %para20, %para21, %para22, %para23, %para24, %para25, %para26, %para27, %para28, %para29, %para30, %para31, %para32, %para33)    #(Ref[Tensor(F32)][32, 1, 5, 5], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32, 32, 3, 3], Ref[Tensor(F32)][64, 32, 3, 3], Ref[Tensor(F32)][64, 64, 3, 3], Ref[Tensor(F32)][128, 64, 3, 3], Ref[Tensor(F32)][128, 128, 3, 3], Ref[Tensor(F32)][256, 128, 3, 3], Ref[Tensor(F32)][256, 256, 3, 3], Ref[Tensor(F32)][256, 256], Ref[Tensor(F32)][256], Ref[Tensor(F32)][31, 256, 200], Ref[Tensor(F32)][7936], Ref[Tensor(F32)][7936]) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]56
+    %4 : $(RiemannianAdam.40):Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)) = Primitive::MakeTuple{prim_type=1}(%para34, %para35, %para36, %para37, %para38, %para39, %para40, %para41, %para42, %para43, %para44, %para45, %para46, %para47, %para48)    #(Ref[Tensor(F32)][32, 1, 5, 5], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32, 32, 3, 3], Ref[Tensor(F32)][64, 32, 3, 3], Ref[Tensor(F32)][64, 64, 3, 3], Ref[Tensor(F32)][128, 64, 3, 3], Ref[Tensor(F32)][128, 128, 3, 3], Ref[Tensor(F32)][256, 128, 3, 3], Ref[Tensor(F32)][256, 256, 3, 3], Ref[Tensor(F32)][256, 256], Ref[Tensor(F32)][256], Ref[Tensor(F32)][31, 256, 200], Ref[Tensor(F32)][7936], Ref[Tensor(F32)][7936]) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]57
+    %5 : $(RiemannianAdam.40):Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)) = Primitive::MakeTuple{prim_type=1}(%para4, %para5, %para6, %para7, %para8, %para9, %para10, %para11, %para12, %para13, %para14, %para15, %para16, %para17, %para18)    #(Ref[Tensor(F32)][32, 1, 5, 5], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32, 32, 3, 3], Ref[Tensor(F32)][64, 32, 3, 3], Ref[Tensor(F32)][64, 64, 3, 3], Ref[Tensor(F32)][128, 64, 3, 3], Ref[Tensor(F32)][128, 128, 3, 3], Ref[Tensor(F32)][256, 128, 3, 3], Ref[Tensor(F32)][256, 256, 3, 3], Ref[Tensor(F32)][256, 256], Ref[Tensor(F32)][256], Ref[Tensor(F32)][31, 256, 200], Ref[Tensor(F32)][7936], Ref[Tensor(F32)][7936]) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:53/        params = self.parameters/#[CNode]58
+    %6 : $(RiemannianAdam.40):Tuple[Tuple[Tensor(F32)*4]*15]TupleShape(TupleShape((32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5)), TupleShape((32), (32), (32), (32)), TupleShape((32), (32), (32), (32)), TupleShape((32, 32, 3, 3), (32, 32, 3, 3), (32, 32, 3, 3), (32, 32, 3, 3)), TupleShape((64, 32, 3, 3), (64, 32, 3, 3), (64, 32, 3, 3), (64, 32, 3, 3)), TupleShape((64, 64, 3, 3), (64, 64, 3, 3), (64, 64, 3, 3), (64, 64, 3, 3)), TupleShape((128, 64, 3, 3), (128, 64, 3, 3), (128, 64, 3, 3), (128, 64, 3, 3)), TupleShape((128, 128, 3, 3), (128, 128, 3, 3), (128, 128, 3, 3), (128, 128, 3, 3)), TupleShape((256, 128, 3, 3), (256, 128, 3, 3), (256, 128, 3, 3), (256, 128, 3, 3)), TupleShape((256, 256, 3, 3), (256, 256, 3, 3), (256, 256, 3, 3), (256, 256, 3, 3)), TupleShape((256, 256), (256, 256), (256, 256), (256, 256)), TupleShape((256), (256), (256), (256)), TupleShape((31, 256, 200), (31, 256, 200), (31, 256, 200), (31, 256, 200)), TupleShape((7936), (7936), (7936), (7936)), TupleShape((7936), (7936), (7936), (7936))) = DoSignaturePrimitive::S-Prim-zip_operation{prim_type=1}(%3, %4, %5, %para57)    #(Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)), Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)), Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)), Tuple[Tensor(F32)*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936))) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]55
+    %7 : Tuple[Tensor(F32)*4]TupleShape((32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5)) = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%6, %para58)    #(Tuple[Tuple[Tensor(F32)*4]*15]TupleShape(TupleShape((32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5)), TupleShape((32), (32), (32), (32)), TupleShape((32), (32), (32), (32)), TupleShape((32, 32, 3, 3), (32, 32, 3, 3), (32, 32, 3, 3), (32, 32, 3, 3)), TupleShape((64, 32, 3, 3), (64, 32, 3, 3), (64, 32, 3, 3), (64, 32, 3, 3)), TupleShape((64, 64, 3, 3), (64, 64, 3, 3), (64, 64, 3, 3), (64, 64, 3, 3)), TupleShape((128, 64, 3, 3), (128, 64, 3, 3), (128, 64, 3, 3), (128, 64, 3, 3)), TupleShape((128, 128, 3, 3), (128, 128, 3, 3), (128, 128, 3, 3), (128, 128, 3, 3)), TupleShape((256, 128, 3, 3), (256, 128, 3, 3), (256, 128, 3, 3), (256, 128, 3, 3)), TupleShape((256, 256, 3, 3), (256, 256, 3, 3), (256, 256, 3, 3), (256, 256, 3, 3)), TupleShape((256, 256), (256, 256), (256, 256), (256, 256)), TupleShape((256), (256), (256), (256)), TupleShape((31, 256, 200), (31, 256, 200), (31, 256, 200), (31, 256, 200)), TupleShape((7936), (7936), (7936), (7936)), TupleShape((7936), (7936), (7936), (7936))), I64NoShape) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]67
+    %8 : Tensor(F32)[32, 1, 5, 5] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%7, I64(3))    #(Tuple[Tensor(F32)*4]TupleShape((32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5)), I64NoShape) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#grad
+    %9 : BoolNoShape = DoSignaturePrimitive::S-Prim-is_{prim_type=1}(%8, None)    #(Tensor(F32)[32, 1, 5, 5], NoneTypeNoShape) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:58/            if grad is None:/#[CNode]68
+    %10 : BoolNoShape = FuncGraph::fg_12(%9)    #(BoolNoShape)    # fg_12=bool_.12 #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:58/            if grad is None:/#[CNode]69
+    %11 : FuncNoShape = Primitive::Switch{prim_type=1}(%10, FuncGraph::fg_70, FuncGraph::fg_44)    #(BoolNoShape, FuncNoShape, FuncNoShape)    # fg_70=✓↻RiemannianAdam.70, fg_44=✗↻RiemannianAdam.44 #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:58/            if grad is None:/#[CNode]71
+
+#------------------------> 4
+    %12 = %11() #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:58/            if grad is None:/#[CNode]72
+    %13 = Primitive::Depend{prim_type=1}[side_effect_propagate=I64(1)](%12, %2)    #(Undefined, I64NoShape) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:106/        return ops.depend(loss, self.optimizer(grads))/#[CNode]73
+    Primitive::Return{prim_type=1}(%13)    #(Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:58/            if grad is None:/#[CNode]74
+}
+# order:
+#   1: @↻RiemannianAdam.43:[CNode]67{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]55, [2]: @[CNode]42}
+#   2: @↻RiemannianAdam.43:exp_avg{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]67, [2]: ValueNode<Int64Imm> 0}
+#   3: @↻RiemannianAdam.43:exp_avg_sq{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]67, [2]: ValueNode<Int64Imm> 1}
+#   4: @↻RiemannianAdam.43:point{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]67, [2]: ValueNode<Int64Imm> 2}
+#   5: @↻RiemannianAdam.43:grad{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]67, [2]: ValueNode<Int64Imm> 3}
+#   6: @↻RiemannianAdam.43:[CNode]42{[0]: ValueNode<MultitypeFuncGraph> add.7, [1]: @[CNode]42, [2]: ValueNode<Int64Imm> 1}
+#   7: @↻RiemannianAdam.43:[CNode]68{[0]: ValueNode<DoSignaturePrimitive> S-Prim-is_, [1]: grad, [2]: ValueNode<None> None}
+#   8: @↻RiemannianAdam.43:[CNode]69{[0]: ValueNode<FuncGraph> bool_.12, [1]: [CNode]68}
+#   9: @↻RiemannianAdam.43:[CNode]71{[0]: ValueNode<Primitive> Switch, [1]: [CNode]69, [2]: ValueNode<FuncGraph> ✓↻RiemannianAdam.70, [3]: ValueNode<FuncGraph> ✗↻RiemannianAdam.44}
+#  10: @↻RiemannianAdam.43:[CNode]72{[0]: [CNode]71}
+#  11: @↻RiemannianAdam.43:[CNode]74{[0]: ValueNode<Primitive> Return, [1]: [CNode]73}
+
+
+# [No.6] ✗↻RiemannianAdam.44
+# In file train.py:58/            if grad is None:/
+funcgraph fg_44[fg_43](
+) {
+
+#------------------------> 5
+    %1 = FuncGraph::fg_45()    # fg_45=↓↻RiemannianAdam.45 #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:58/            if grad is None:/#[CNode]75
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:58/            if grad is None:/#[CNode]76
+}
+# order:
+#   1: @✗↻RiemannianAdam.44:[CNode]75{[0]: ValueNode<FuncGraph> ↓↻RiemannianAdam.45}
+#   2: @✗↻RiemannianAdam.44:[CNode]76{[0]: ValueNode<Primitive> Return, [1]: [CNode]75}
+
+
+# [No.7] ↓↻RiemannianAdam.45
+# In file train.py:58/            if grad is None:/
+funcgraph fg_45[fg_43](
+) {
+    %1 : $(RiemannianAdam.40):Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)) = Primitive::MakeTuple{prim_type=1}(%para19, %para20, %para21, %para22, %para23, %para24, %para25, %para26, %para27, %para28, %para29, %para30, %para31, %para32, %para33)    #(Ref[Tensor(F32)][32, 1, 5, 5], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32, 32, 3, 3], Ref[Tensor(F32)][64, 32, 3, 3], Ref[Tensor(F32)][64, 64, 3, 3], Ref[Tensor(F32)][128, 64, 3, 3], Ref[Tensor(F32)][128, 128, 3, 3], Ref[Tensor(F32)][256, 128, 3, 3], Ref[Tensor(F32)][256, 256, 3, 3], Ref[Tensor(F32)][256, 256], Ref[Tensor(F32)][256], Ref[Tensor(F32)][31, 256, 200], Ref[Tensor(F32)][7936], Ref[Tensor(F32)][7936]) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]56
+    %2 : $(RiemannianAdam.40):Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)) = Primitive::MakeTuple{prim_type=1}(%para34, %para35, %para36, %para37, %para38, %para39, %para40, %para41, %para42, %para43, %para44, %para45, %para46, %para47, %para48)    #(Ref[Tensor(F32)][32, 1, 5, 5], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32, 32, 3, 3], Ref[Tensor(F32)][64, 32, 3, 3], Ref[Tensor(F32)][64, 64, 3, 3], Ref[Tensor(F32)][128, 64, 3, 3], Ref[Tensor(F32)][128, 128, 3, 3], Ref[Tensor(F32)][256, 128, 3, 3], Ref[Tensor(F32)][256, 256, 3, 3], Ref[Tensor(F32)][256, 256], Ref[Tensor(F32)][256], Ref[Tensor(F32)][31, 256, 200], Ref[Tensor(F32)][7936], Ref[Tensor(F32)][7936]) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]57
+    %3 : $(RiemannianAdam.40):Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)) = Primitive::MakeTuple{prim_type=1}(%para4, %para5, %para6, %para7, %para8, %para9, %para10, %para11, %para12, %para13, %para14, %para15, %para16, %para17, %para18)    #(Ref[Tensor(F32)][32, 1, 5, 5], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32], Ref[Tensor(F32)][32, 32, 3, 3], Ref[Tensor(F32)][64, 32, 3, 3], Ref[Tensor(F32)][64, 64, 3, 3], Ref[Tensor(F32)][128, 64, 3, 3], Ref[Tensor(F32)][128, 128, 3, 3], Ref[Tensor(F32)][256, 128, 3, 3], Ref[Tensor(F32)][256, 256, 3, 3], Ref[Tensor(F32)][256, 256], Ref[Tensor(F32)][256], Ref[Tensor(F32)][31, 256, 200], Ref[Tensor(F32)][7936], Ref[Tensor(F32)][7936]) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:53/        params = self.parameters/#[CNode]58
+    %4 : $(RiemannianAdam.40):Tuple[Tuple[Tensor(F32)*4]*15]TupleShape(TupleShape((32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5)), TupleShape((32), (32), (32), (32)), TupleShape((32), (32), (32), (32)), TupleShape((32, 32, 3, 3), (32, 32, 3, 3), (32, 32, 3, 3), (32, 32, 3, 3)), TupleShape((64, 32, 3, 3), (64, 32, 3, 3), (64, 32, 3, 3), (64, 32, 3, 3)), TupleShape((64, 64, 3, 3), (64, 64, 3, 3), (64, 64, 3, 3), (64, 64, 3, 3)), TupleShape((128, 64, 3, 3), (128, 64, 3, 3), (128, 64, 3, 3), (128, 64, 3, 3)), TupleShape((128, 128, 3, 3), (128, 128, 3, 3), (128, 128, 3, 3), (128, 128, 3, 3)), TupleShape((256, 128, 3, 3), (256, 128, 3, 3), (256, 128, 3, 3), (256, 128, 3, 3)), TupleShape((256, 256, 3, 3), (256, 256, 3, 3), (256, 256, 3, 3), (256, 256, 3, 3)), TupleShape((256, 256), (256, 256), (256, 256), (256, 256)), TupleShape((256), (256), (256), (256)), TupleShape((31, 256, 200), (31, 256, 200), (31, 256, 200), (31, 256, 200)), TupleShape((7936), (7936), (7936), (7936)), TupleShape((7936), (7936), (7936), (7936))) = DoSignaturePrimitive::S-Prim-zip_operation{prim_type=1}(%1, %2, %3, %para57)    #(Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)), Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)), Tuple[Ref[Tensor(F32)]*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936)), Tuple[Tensor(F32)*15]TupleShape((32, 1, 5, 5), (32), (32), (32, 32, 3, 3), (64, 32, 3, 3), (64, 64, 3, 3), (128, 64, 3, 3), (128, 128, 3, 3), (256, 128, 3, 3), (256, 256, 3, 3), (256, 256), (256), (31, 256, 200), (7936), (7936))) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]55
+    %5 = $(↻RiemannianAdam.43):DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%4, %para58)    #(Tuple[Tuple[Tensor(F32)*4]*15]TupleShape(TupleShape((32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5), (32, 1, 5, 5)), TupleShape((32), (32), (32), (32)), TupleShape((32), (32), (32), (32)), TupleShape((32, 32, 3, 3), (32, 32, 3, 3), (32, 32, 3, 3), (32, 32, 3, 3)), TupleShape((64, 32, 3, 3), (64, 32, 3, 3), (64, 32, 3, 3), (64, 32, 3, 3)), TupleShape((64, 64, 3, 3), (64, 64, 3, 3), (64, 64, 3, 3), (64, 64, 3, 3)), TupleShape((128, 64, 3, 3), (128, 64, 3, 3), (128, 64, 3, 3), (128, 64, 3, 3)), TupleShape((128, 128, 3, 3), (128, 128, 3, 3), (128, 128, 3, 3), (128, 128, 3, 3)), TupleShape((256, 128, 3, 3), (256, 128, 3, 3), (256, 128, 3, 3), (256, 128, 3, 3)), TupleShape((256, 256, 3, 3), (256, 256, 3, 3), (256, 256, 3, 3), (256, 256, 3, 3)), TupleShape((256, 256), (256, 256), (256, 256), (256, 256)), TupleShape((256), (256), (256), (256)), TupleShape((31, 256, 200), (31, 256, 200), (31, 256, 200), (31, 256, 200)), TupleShape((7936), (7936), (7936), (7936)), TupleShape((7936), (7936), (7936), (7936))), Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]67
+    %6 = $(↻RiemannianAdam.43):DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%5, I64(0))    #(Undefined, I64NoShape) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#exp_avg
+
+#------------------------> 6
+    %7 = $(RiemannianAdam.40):Primitive::resolve{prim_type=1}(NameSpace::ClassMember, add)    #(ExternalTypeNoShape, ExternalTypeNoShape) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]60
+    %8 = DoSignaturePrimitive::S-Prim-Mul{prim_type=1}[output_names=["output"], input_names=["x", "y"]](%6, Tensor(43)[1])    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:60/            exp_avg_update = self.add(self.mul(exp_avg, beta1), (1 - beta1) * grad)/#[CNode]94
+    %9 = DoSignaturePrimitive::S-Prim-sub{prim_type=1}(I64(1), Tensor(43)[1])    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:60/            exp_avg_update = self.add(self.mul(exp_avg, beta1), (1 - beta1) * grad)/#[CNode]95
+    %10 = $(↻RiemannianAdam.43):DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%5, I64(3))    #(Undefined, I64NoShape) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#grad
+    %11 = DoSignaturePrimitive::S-Prim-mul{prim_type=1}(%9, %10)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:60/            exp_avg_update = self.add(self.mul(exp_avg, beta1), (1 - beta1) * grad)/#[CNode]96
+    %12 = %7(%8, %11)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:60/            exp_avg_update = self.add(self.mul(exp_avg, beta1), (1 - beta1) * grad)/#exp_avg_update
+    %13 = DoSignaturePrimitive::S-Prim-Assign{prim_type=1}[output_names=["output"], side_effect_mem=Bool(1), input_names=["ref", "value"]](%6, %12)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:73/            self.assign(exp_avg, exp_avg_update)/#[CNode]97
+    %14 = $(↻RiemannianAdam.43):DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%5, I64(1))    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#exp_avg_sq
+    %15 = DoSignaturePrimitive::S-Prim-Mul{prim_type=1}[output_names=["output"], input_names=["x", "y"]](%14, Tensor(43)[1])    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:61/            exp_avg_sq_update = self.add(self.mul(exp_avg_sq, beta2),/#[CNode]98
+    %16 = DoSignaturePrimitive::S-Prim-sub{prim_type=1}(I64(1), Tensor(43)[1])    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:62/                                         (1 - beta2) * (self.sum(grad * grad, -1))/#[CNode]99
+    %17 = DoSignaturePrimitive::S-Prim-mul{prim_type=1}(%10, %10)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:62/                                         (1 - beta2) * (self.sum(grad * grad, -1))/#[CNode]100
+    %18 = DoSignaturePrimitive::S-Prim-negative{prim_type=1}(I64(1))    #(Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:62/                                         (1 - beta2) * (self.sum(grad * grad, -1))/#[CNode]101
+    %19 = DoSignaturePrimitive::S-Prim-ReduceSum{prim_type=1}[output_names=["y"], keep_dims=Bool(1), input_names=["input_x", "axis"]](%17, %18)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:62/                                         (1 - beta2) * (self.sum(grad * grad, -1))/#[CNode]102
+    %20 = DoSignaturePrimitive::S-Prim-mul{prim_type=1}(%16, %19)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:62/                                         (1 - beta2) * (self.sum(grad * grad, -1))/#[CNode]103
+    %21 = %7(%15, %20)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:61/            exp_avg_sq_update = self.add(self.mul(exp_avg_sq, beta2),/#exp_avg_sq_update
+    %22 = DoSignaturePrimitive::S-Prim-Assign{prim_type=1}[output_names=["output"], side_effect_mem=Bool(1), input_names=["ref", "value"]](%14, %21)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:74/            self.assign(exp_avg_sq, exp_avg_sq_update)/#[CNode]104
+    %23 = Primitive::MakeTuple{prim_type=1}(%13, %22)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:106/        return ops.depend(loss, self.optimizer(grads))/#[CNode]105
+    %24 = Primitive::stop_gradient{prim_type=1}(%23)    #(Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:106/        return ops.depend(loss, self.optimizer(grads))/#[CNode]106
+    %25 = $(↻RiemannianAdam.43):MultitypeFuncGraph::add{(COOTensor, COOTensor), (CSRTensor, CSRTensor), (Number, Number), (String, String), (Tensor, List), (Tuple, Tuple), (Tensor, Number), (Number, Tensor), (Tuple, Tensor), (Tensor, Tuple), (COOTensor, Tensor), (List, List), (Tensor, COOTensor), (Tensor, Tensor), (List, Tensor), (RowTensor, Tensor), (NoneType, NoneType)}(%para58, I64(1))    #(Undefined, I64NoShape) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]42
+    %26 = DoSignaturePrimitive::S-Prim-add{prim_type=1}(%para59, I64(1))    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:66/            step += 1/#step
+    %27 = DoSignaturePrimitive::S-Prim-add{prim_type=1}(%26, I64(1))    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:72/            step += 1/#step
+    %28 = $(↻RiemannianAdam.43):DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%5, I64(2))    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#point
+    %29 = $(RiemannianAdam.40):FuncGraph::fg_54()    # fg_54=get_lr.54 #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:52/        learning_rate = self.get_lr()/#learning_rate
+    %30 = DoSignaturePrimitive::S-Prim-Pow{prim_type=1}[output_names=["y"], input_names=["x1", "x2"]](Tensor(43)[1], %26)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:68/            bias_cor2 = 1 - self.pow(beta2, step)/#[CNode]107
+    %31 = DoSignaturePrimitive::S-Prim-sub{prim_type=1}(I64(1), %30)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:68/            bias_cor2 = 1 - self.pow(beta2, step)/#bias_cor2
+    %32 = DoSignaturePrimitive::S-Prim-pow{prim_type=1}(%31, F32(0.5))    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:69/            step_size = learning_rate * bias_cor2 ** 0.5 / bias_cor1/#[CNode]108
+    %33 = DoSignaturePrimitive::S-Prim-mul{prim_type=1}(%29, %32)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:69/            step_size = learning_rate * bias_cor2 ** 0.5 / bias_cor1/#[CNode]109
+    %34 = DoSignaturePrimitive::S-Prim-Pow{prim_type=1}[output_names=["y"], input_names=["x1", "x2"]](Tensor(43)[1], %26)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:67/            bias_cor1 = 1 - self.pow(beta1, step)/#[CNode]110
+    %35 = DoSignaturePrimitive::S-Prim-sub{prim_type=1}(I64(1), %34)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:67/            bias_cor1 = 1 - self.pow(beta1, step)/#bias_cor1
+    %36 = DoSignaturePrimitive::S-Prim-div{prim_type=1}(%33, %35)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:69/            step_size = learning_rate * bias_cor2 ** 0.5 / bias_cor1/#step_size
+    %37 = FuncGraph::fg_111(%21)    #(Undefined)    # fg_111=sqrt.111 #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:65/            denom = ops.add(ops.sqrt(exp_avg_sq_update), eps)/#[CNode]112
+    %38 = FuncGraph::fg_113(%37, Tensor(43)[1])    #(Undefined, Undefined)    # fg_113=add.113 #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:65/            denom = ops.add(ops.sqrt(exp_avg_sq_update), eps)/#denom
+    %39 = DoSignaturePrimitive::S-Prim-div{prim_type=1}(%12, %38)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:70/            direction = exp_avg_update / denom/#direction
+    %40 = DoSignaturePrimitive::S-Prim-mul{prim_type=1}(%36, %39)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:71/            new_point = point - step_size * direction/#[CNode]114
+    %41 = DoSignaturePrimitive::S-Prim-sub{prim_type=1}(%28, %40)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:71/            new_point = point - step_size * direction/#new_point
+    %42 = DoSignaturePrimitive::S-Prim-Assign{prim_type=1}[output_names=["output"], side_effect_mem=Bool(1), input_names=["ref", "value"]](%28, %41)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:75/            success = self.assign(param, new_point)/#success
+    %43 = FuncGraph::fg_41(%25, %27, %42)    #(Undefined, Undefined, Undefined)    # fg_41=↵RiemannianAdam.41 #scope: Default
+      # In file train.py:106/        return ops.depend(loss, self.optimizer(grads))/#[CNode]115
+    %44 = Primitive::Depend{prim_type=1}[side_effect_propagate=I64(1)](%43, %24)    #(Undefined, Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:106/        return ops.depend(loss, self.optimizer(grads))/#[CNode]116
+    Primitive::Return{prim_type=1}(%44)    #(Undefined) #scope: Default/optimizer-RiemannianAdam
+      # In file train.py:56/        for exp_avg, exp_avg_sq, param, grad in zip(self.exp_avg, self.exp_avg_sq, params, gradients):/#[CNode]117
+}
+# order:
+#   1: @↓↻RiemannianAdam.45:[CNode]94{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Mul, [1]: exp_avg, [2]: ValueNode<Tensor> Tensor(shape=[1], dtype=Float32, value=[ 8.99999976e-01])}
+#   2: @↓↻RiemannianAdam.45:[CNode]95{[0]: ValueNode<DoSignaturePrimitive> S-Prim-sub, [1]: ValueNode<Int64Imm> 1, [2]: ValueNode<Tensor> Tensor(shape=[1], dtype=Float32, value=[ 8.99999976e-01])}
+#   3: @↓↻RiemannianAdam.45:[CNode]96{[0]: ValueNode<DoSignaturePrimitive> S-Prim-mul, [1]: [CNode]95, [2]: grad}
+#   4: @↓↻RiemannianAdam.45:exp_avg_update{[0]: [CNode]60, [1]: [CNode]94, [2]: [CNode]96}
+#   5: @↓↻RiemannianAdam.45:[CNode]98{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Mul, [1]: exp_avg_sq, [2]: ValueNode<Tensor> Tensor(shape=[1], dtype=Float32, value=[ 9.99000013e-01])}
+#   6: @↓↻RiemannianAdam.45:[CNode]99{[0]: ValueNode<DoSignaturePrimitive> S-Prim-sub, [1]: ValueNode<Int64Imm> 1, [2]: ValueNode<Tensor> Tensor(shape=[1], dtype=Float32, value=[ 9.99000013e-01])}
+#   7: @↓↻RiemannianAdam.45:[CNode]100{[0]: ValueNode<DoSignaturePrimitive> S-Prim-mul, [1]: grad, [2]: grad}
+#   8: @↓↻RiemannianAdam.45:[CNode]101{[0]: ValueNode<DoSignaturePrimitive> S-Prim-negative, [1]: ValueNode<Int64Imm> 1}
+#   9: @↓↻RiemannianAdam.45:[CNode]102{[0]: ValueNode<DoSignaturePrimitive> S-Prim-ReduceSum, [1]: [CNode]100, [2]: [CNode]101}
+#  10: @↓↻RiemannianAdam.45:[CNode]103{[0]: ValueNode<DoSignaturePrimitive> S-Prim-mul, [1]: [CNode]99, [2]: [CNode]102}
+#  11: @↓↻RiemannianAdam.45:exp_avg_sq_update{[0]: [CNode]60, [1]: [CNode]98, [2]: [CNode]103}
+#  12: @↓↻RiemannianAdam.45:[CNode]112{[0]: ValueNode<FuncGraph> sqrt.111, [1]: exp_avg_sq_update}
+#  13: @↓↻RiemannianAdam.45:denom{[0]: ValueNode<FuncGraph> add.113, [1]: [CNode]112, [2]: ValueNode<Tensor> Tensor(shape=[1], dtype=Float32, value=[ 9.99999994e-09])}
+#  14: @↓↻RiemannianAdam.45:step{[0]: ValueNode<DoSignaturePrimitive> S-Prim-add, [1]: фstep, [2]: ValueNode<Int64Imm> 1}
+#  15: @↓↻RiemannianAdam.45:[CNode]110{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Pow, [1]: ValueNode<Tensor> Tensor(shape=[1], dtype=Float32, value=[ 8.99999976e-01]), [2]: step}
+#  16: @↓↻RiemannianAdam.45:bias_cor1{[0]: ValueNode<DoSignaturePrimitive> S-Prim-sub, [1]: ValueNode<Int64Imm> 1, [2]: [CNode]110}
+#  17: @↓↻RiemannianAdam.45:[CNode]107{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Pow, [1]: ValueNode<Tensor> Tensor(shape=[1], dtype=Float32, value=[ 9.99000013e-01]), [2]: step}
+#  18: @↓↻RiemannianAdam.45:bias_cor2{[0]: ValueNode<DoSignaturePrimitive> S-Prim-sub, [1]: ValueNode<Int64Imm> 1, [2]: [CNode]107}
+#  19: @↓↻RiemannianAdam.45:[CNode]108{[0]: ValueNode<DoSignaturePrimitive> S-Prim-pow, [1]: bias_cor2, [2]: ValueNode<FP32Imm> 0.500000}
+#  20: @↓↻RiemannianAdam.45:[CNode]109{[0]: ValueNode<DoSignaturePrimitive> S-Prim-mul, [1]: learning_rate, [2]: [CNode]108}
+#  21: @↓↻RiemannianAdam.45:step_size{[0]: ValueNode<DoSignaturePrimitive> S-Prim-div, [1]: [CNode]109, [2]: bias_cor1}
+#  22: @↓↻RiemannianAdam.45:direction{[0]: ValueNode<DoSignaturePrimitive> S-Prim-div, [1]: exp_avg_update, [2]: denom}
+#  23: @↓↻RiemannianAdam.45:[CNode]114{[0]: ValueNode<DoSignaturePrimitive> S-Prim-mul, [1]: step_size, [2]: direction}
+#  24: @↓↻RiemannianAdam.45:new_point{[0]: ValueNode<DoSignaturePrimitive> S-Prim-sub, [1]: point, [2]: [CNode]114}
+#  25: @↓↻RiemannianAdam.45:step{[0]: ValueNode<DoSignaturePrimitive> S-Prim-add, [1]: step, [2]: ValueNode<Int64Imm> 1}
+#  26: @↓↻RiemannianAdam.45:[CNode]97{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Assign, [1]: exp_avg, [2]: exp_avg_update}
+#  27: @↓↻RiemannianAdam.45:[CNode]104{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Assign, [1]: exp_avg_sq, [2]: exp_avg_sq_update}
+#  28: @↓↻RiemannianAdam.45:success{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Assign, [1]: point, [2]: new_point}
+#  29: @↓↻RiemannianAdam.45:[CNode]117{[0]: ValueNode<Primitive> Return, [1]: [CNode]116}
+#  30: @↓↻RiemannianAdam.45:[CNode]115{[0]: ValueNode<FuncGraph> ↵RiemannianAdam.41, [1]: [CNode]42, [2]: step, [3]: success}
+
+
+#===============================================================================
+# num of function graphs in stack: 7

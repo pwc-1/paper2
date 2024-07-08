@@ -1,0 +1,61 @@
+
+mode: null
+data_root: &data_root "/opt/data/private/yptang/codes/mindspore/IPM_PBBNet/data/anet_1.3" #"/data/ActivityNet1.3" #
+output_dir: &output_dir "./ouputs" #"/data/bmn_output"#
+experiment_name: &experiment_name "default"
+log_level: "DEBUG"
+platform: "GPU" # GPU, Ascend
+summary_save_dir: "./summary"
+
+train:
+  learning_rate: 0.0004 # 1e-3
+  weight_decay: 0.00001 # 1e-4
+  epoch: 9
+  batch_size: 4
+  step_size: 7
+  step_gamma: 0.1
+
+data:
+  threads: 4 #8
+  video_anno: !Path [*data_root, "annotations/anet1.3_tsp_filtered.json"]
+  feature_path: !Path [*data_root, "tsp_features/"]
+  train_proposals_path: !Path [*data_root, "coarse_proposals_train/"]
+  test_proposals_path: !Path [*data_root, "coarse_proposals_val/"]
+  frames_fps: 15.0
+
+model:
+  temporal_scale: 1000
+  num_sample: 32
+  num_sample_perbin: 3
+  prop_boundary_ratio: 0.5
+  feat_dim: 512
+  lgte_num: 3
+  start_sample_num: 32
+  end_sample_num: 32
+  action_sample_num: 64
+  temporal_interval: 1.0666666
+
+ckpt:
+  save_dir: !Path [*output_dir, *experiment_name, "ckpt/"]
+  eval_freq: 1
+  start_epoch: 1
+  keep_checkpoint_max: 5
+
+eval:
+  checkpoint: ""
+  threads: 3
+  batch_size: 1
+  output_path: !Path [*output_dir, *experiment_name, "PBBNet_results/"]
+
+postprocessing:
+  post_process_thread: 12
+  threads: 4
+  soft_nms_alpha: 0.4
+  soft_nms_low_thres: 0.0
+  soft_nms_high_thres: 0.0
+  result_path: &result_path !Path [*output_dir, *experiment_name, "output"]
+  result_file: !Path [*result_path, "result_proposal.json"]
+  save_fig_path: !Path [*output_dir, *experiment_name, "output/evaluation_result.jpg"]
+  proposals_result_file: !Path [*output_dir, *experiment_name, "output/result_proposals.json"]
+  classifier_result: !Path [*data_root, "annotations/cuhk_val_simp_share.json"]
+  detection_result_file: !Path [*output_dir, *experiment_name, "output/result_detection.json"]

@@ -1,0 +1,218 @@
+{}
+{'ckpt': {'eval_freq': 1,
+          'keep_checkpoint_max': 5,
+          'save_dir': '/opt/data/private/yptang/codes/mindspore/ouputs/default/ckpt/',
+          'start_epoch': 1},
+ 'data': {'feature_path': '/opt/data/private/yptang/datasets/TAL/Anet/fix_feat_100/',
+          'gt': '/opt/data/private/yptang/datasets/TAL/Anet/activitynet_annotations/activity_net_1_3_new.json',
+          'threads': 4,
+          'video_anno': '/opt/data/private/yptang/datasets/TAL/Anet/activitynet_annotations/anet_anno_action.json',
+          'video_annotations': '/opt/data/private/yptang/datasets/TAL/Anet/activitynet_annotations/activitynet_1.3_annotations.json',
+          'video_info': '/opt/data/private/yptang/datasets/TAL/Anet/activitynet_annotations/video_info_new.csv'},
+ 'data_root': '/opt/data/private/yptang/datasets/TAL/Anet',
+ 'eval': {'batch_size': 16,
+          'checkpoint': '',
+          'output_path': '/opt/data/private/yptang/codes/mindspore/ouputs/default/BMN_results/',
+          'threads': 3},
+ 'experiment_name': 'default',
+ 'log_level': 'DEBUG',
+ 'mode': 'train',
+ 'model': {'feat_dim': 400,
+           'num_sample': 32,
+           'num_sample_perbin': 3,
+           'prop_boundary_ratio': 0.5,
+           'temporal_scale': 100},
+ 'output_dir': '/opt/data/private/yptang/codes/mindspore/ouputs',
+ 'platform': 'GPU',
+ 'postprocessing': {'result_file': '/opt/data/private/yptang/codes/mindspore/ouputs/default/output/result_proposal.json',
+                    'result_path': '/opt/data/private/yptang/codes/mindspore/ouputs/default/output',
+                    'save_fig_path': '/opt/data/private/yptang/codes/mindspore/ouputs/default/output/evaluation_result.jpg',
+                    'soft_nms_alpha': 0.4,
+                    'soft_nms_high_thres': 0.9,
+                    'soft_nms_low_thres': 0.5,
+                    'threads': 4},
+ 'summary_save_dir': './summary',
+ 'train': {'batch_size': 16,
+           'epoch': 9,
+           'learning_rate': 0.001,
+           'step_gamma': 0.1,
+           'step_size': 7,
+           'weight_decay': 0.0001}}
+INFO:__main__:Network created
+  0%|          | 0/4728 [00:00<?, ?it/s, 
+]Collecting BMN metrics:   0%|          | 0/4728 [00:00<?, ?it/s, 
+]Collecting BMN metrics:   0%|          | 0/4728 [00:00<?, ?it/s, 
+]Collecting BMN metrics:   0%|          | 0/4728 [00:00<?, ?it/s, 
+]Collecting BMN metrics:   0%|          | 16/4728 [00:07<36:44,  2.14it/s, 
+]Collecting BMN metrics:   1%|          | 32/4728 [00:07<16:27,  4.76it/s, 
+]Collecting BMN metrics:   1%|          | 48/4728 [00:08<09:47,  7.96it/s, 
+]Collecting BMN metrics:   1%|▏         | 64/4728 [00:08<06:40, 11.64it/s, 
+]Collecting BMN metrics:   2%|▏         | 80/4728 [00:09<04:58, 15.57it/s, 
+]Collecting BMN metrics:   2%|▏         | 96/4728 [00:09<04:02, 19.10it/s, 
+]Collecting BMN metrics:   2%|▏         | 112/4728 [00:10<03:26, 22.31it/s, 
+]Collecting BMN metrics:   3%|▎         | 128/4728 [00:10<02:57, 25.93it/s, 
+]Collecting BMN metrics:   3%|▎         | 144/4728 [00:10<02:39, 28.78it/s, 
+]Collecting BMN metrics:   3%|▎         | 160/4728 [00:11<02:32, 29.86it/s, 
+]Collecting BMN metrics:   4%|▎         | 176/4728 [00:11<02:23, 31.80it/s, 
+]Collecting BMN metrics:   4%|▍         | 192/4728 [00:12<02:15, 33.53it/s, 
+]Collecting BMN metrics:   4%|▍         | 208/4728 [00:12<02:09, 34.88it/s, 
+]Collecting BMN metrics:   5%|▍         | 224/4728 [00:13<02:11, 34.35it/s, 
+]Collecting BMN metrics:   5%|▌         | 240/4728 [00:13<02:06, 35.40it/s, 
+]Collecting BMN metrics:   5%|▌         | 256/4728 [00:14<02:08, 34.81it/s, 
+]Collecting BMN metrics:   6%|▌         | 272/4728 [00:14<02:03, 35.98it/s, 
+]Collecting BMN metrics:   6%|▌         | 288/4728 [00:14<02:07, 34.92it/s, 
+]Collecting BMN metrics:   6%|▋         | 304/4728 [00:15<02:02, 36.07it/s, 
+]Collecting BMN metrics:   7%|▋         | 320/4728 [00:15<01:58, 37.13it/s, 
+]Collecting BMN metrics:   7%|▋         | 336/4728 [00:16<02:01, 36.01it/s, 
+]Collecting BMN metrics:   7%|▋         | 352/4728 [00:16<01:58, 36.98it/s, 
+]Collecting BMN metrics:   8%|▊         | 368/4728 [00:17<01:56, 37.37it/s, 
+]Collecting BMN metrics:   8%|▊         | 384/4728 [00:17<01:54, 37.86it/s, 
+]Collecting BMN metrics:   8%|▊         | 400/4728 [00:17<01:58, 36.39it/s, 
+]Collecting BMN metrics:   9%|▉         | 416/4728 [00:18<02:02, 35.31it/s, 
+]Collecting BMN metrics:   9%|▉         | 432/4728 [00:18<01:58, 36.39it/s, 
+]Collecting BMN metrics:   9%|▉         | 448/4728 [00:19<01:58, 36.19it/s, 
+]Collecting BMN metrics:  10%|▉         | 464/4728 [00:19<02:01, 35.11it/s, 
+]Collecting BMN metrics:  10%|█         | 480/4728 [00:20<01:57, 36.20it/s, 
+]Collecting BMN metrics:  10%|█         | 496/4728 [00:20<01:54, 37.11it/s, 
+]Collecting BMN metrics:  11%|█         | 512/4728 [00:21<01:51, 37.92it/s, 
+]Collecting BMN metrics:  11%|█         | 528/4728 [00:21<01:55, 36.48it/s, 
+]Collecting BMN metrics:  12%|█▏        | 544/4728 [00:21<01:55, 36.31it/s, 
+]Collecting BMN metrics:  12%|█▏        | 560/4728 [00:22<01:57, 35.34it/s, 
+]Collecting BMN metrics:  12%|█▏        | 576/4728 [00:22<01:53, 36.52it/s, 
+]Collecting BMN metrics:  13%|█▎        | 592/4728 [00:23<01:56, 35.47it/s, 
+]Collecting BMN metrics:  13%|█▎        | 608/4728 [00:23<01:52, 36.62it/s, 
+]Collecting BMN metrics:  13%|█▎        | 624/4728 [00:24<01:51, 36.76it/s, 
+]Collecting BMN metrics:  14%|█▎        | 640/4728 [00:24<01:48, 37.57it/s, 
+]Collecting BMN metrics:  14%|█▍        | 656/4728 [00:25<01:53, 35.84it/s, 
+]Collecting BMN metrics:  14%|█▍        | 672/4728 [00:25<01:52, 36.10it/s, 
+]Collecting BMN metrics:  15%|█▍        | 688/4728 [00:25<01:49, 37.01it/s, 
+]Collecting BMN metrics:  15%|█▍        | 704/4728 [00:26<01:51, 36.23it/s, 
+]Collecting BMN metrics:  15%|█▌        | 720/4728 [00:26<01:47, 37.29it/s, 
+]Collecting BMN metrics:  16%|█▌        | 736/4728 [00:27<01:49, 36.31it/s, 
+]Collecting BMN metrics:  16%|█▌        | 752/4728 [00:27<01:49, 36.47it/s, 
+]Collecting BMN metrics:  16%|█▌        | 768/4728 [00:28<01:47, 36.84it/s, 
+]Collecting BMN metrics:  17%|█▋        | 784/4728 [00:28<01:49, 35.89it/s, 
+]Collecting BMN metrics:  17%|█▋        | 800/4728 [00:28<01:46, 36.80it/s, 
+]Collecting BMN metrics:  17%|█▋        | 816/4728 [00:29<01:44, 37.31it/s, 
+]Collecting BMN metrics:  18%|█▊        | 832/4728 [00:29<01:43, 37.72it/s, 
+]Collecting BMN metrics:  18%|█▊        | 848/4728 [00:30<01:48, 35.63it/s, 
+]Collecting BMN metrics:  18%|█▊        | 864/4728 [00:30<01:46, 36.25it/s, 
+]Collecting BMN metrics:  19%|█▊        | 880/4728 [00:31<01:47, 35.64it/s, 
+]Collecting BMN metrics:  19%|█▉        | 896/4728 [00:31<01:44, 36.77it/s, 
+]Collecting BMN metrics:  19%|█▉        | 912/4728 [00:32<01:50, 34.57it/s, 
+]Collecting BMN metrics:  20%|█▉        | 928/4728 [00:32<01:45, 36.14it/s, 
+]Collecting BMN metrics:  20%|█▉        | 944/4728 [00:32<01:41, 37.25it/s, 
+]Collecting BMN metrics:  20%|██        | 960/4728 [00:33<01:38, 38.08it/s, 
+]Collecting BMN metrics:  21%|██        | 976/4728 [00:33<01:42, 36.72it/s, 
+]Collecting BMN metrics:  21%|██        | 992/4728 [00:34<01:38, 37.75it/s, 
+]Collecting BMN metrics:  21%|██▏       | 1008/4728 [00:34<01:41, 36.48it/s, 
+]Collecting BMN metrics:  22%|██▏       | 1024/4728 [00:35<01:38, 37.50it/s, 
+]Collecting BMN metrics:  22%|██▏       | 1040/4728 [00:35<01:37, 37.91it/s, 
+]Collecting BMN metrics:  22%|██▏       | 1056/4728 [00:35<01:41, 36.18it/s, 
+]Collecting BMN metrics:  23%|██▎       | 1072/4728 [00:36<01:38, 37.29it/s, 
+]Collecting BMN metrics:  23%|██▎       | 1088/4728 [00:36<01:35, 38.14it/s, 
+]Collecting BMN metrics:  23%|██▎       | 1104/4728 [00:37<01:33, 38.92it/s, 
+]Collecting BMN metrics:  24%|██▎       | 1120/4728 [00:37<01:36, 37.53it/s, 
+]Collecting BMN metrics:  24%|██▍       | 1136/4728 [00:37<01:33, 38.30it/s, 
+]Collecting BMN metrics:  24%|██▍       | 1152/4728 [00:38<01:37, 36.79it/s, 
+]Collecting BMN metrics:  25%|██▍       | 1168/4728 [00:38<01:34, 37.76it/s, 
+]Collecting BMN metrics:  25%|██▌       | 1184/4728 [00:39<01:32, 38.21it/s, 
+]Collecting BMN metrics:  25%|██▌       | 1200/4728 [00:39<01:36, 36.67it/s, 
+]Collecting BMN metrics:  26%|██▌       | 1216/4728 [00:40<01:33, 37.45it/s, 
+]Collecting BMN metrics:  26%|██▌       | 1232/4728 [00:40<01:31, 38.22it/s, 
+]Collecting BMN metrics:  26%|██▋       | 1248/4728 [00:40<01:29, 38.90it/s, 
+]Collecting BMN metrics:  27%|██▋       | 1264/4728 [00:41<01:33, 37.22it/s, 
+]Collecting BMN metrics:  27%|██▋       | 1280/4728 [00:41<01:30, 38.04it/s, 
+]Collecting BMN metrics:  27%|██▋       | 1296/4728 [00:42<01:34, 36.32it/s, 
+]Collecting BMN metrics:  28%|██▊       | 1312/4728 [00:42<01:31, 37.40it/s, 
+]Collecting BMN metrics:  28%|██▊       | 1328/4728 [00:43<01:29, 38.04it/s, 
+]Collecting BMN metrics:  28%|██▊       | 1344/4728 [00:43<01:32, 36.62it/s, 
+]Collecting BMN metrics:  29%|██▉       | 1360/4728 [00:43<01:29, 37.81it/s, 
+]Collecting BMN metrics:  29%|██▉       | 1376/4728 [00:44<01:27, 38.33it/s, 
+]Collecting BMN metrics:  29%|██▉       | 1392/4728 [00:44<01:26, 38.71it/s, 
+]Collecting BMN metrics:  30%|██▉       | 1408/4728 [00:45<01:29, 37.25it/s, 
+]Collecting BMN metrics:  30%|███       | 1424/4728 [00:45<01:26, 38.17it/s, 
+]Collecting BMN metrics:  30%|███       | 1440/4728 [00:46<01:30, 36.52it/s, 
+]Collecting BMN metrics:  31%|███       | 1456/4728 [00:46<01:27, 37.55it/s, 
+]Collecting BMN metrics:  31%|███       | 1472/4728 [00:46<01:24, 38.41it/s, 
+]Collecting BMN metrics:  31%|███▏      | 1488/4728 [00:47<01:27, 37.10it/s, 
+]Collecting BMN metrics:  32%|███▏      | 1504/4728 [00:47<01:24, 38.12it/s, 
+]Collecting BMN metrics:  32%|███▏      | 1520/4728 [00:48<01:22, 38.69it/s, 
+]Collecting BMN metrics:  32%|███▏      | 1536/4728 [00:48<01:22, 38.86it/s, 
+]Collecting BMN metrics:  33%|███▎      | 1552/4728 [00:49<01:25, 36.99it/s, 
+]Collecting BMN metrics:  33%|███▎      | 1568/4728 [00:49<01:24, 37.56it/s, 
+]Collecting BMN metrics:  34%|███▎      | 1584/4728 [00:49<01:27, 36.13it/s, 
+]Collecting BMN metrics:  34%|███▍      | 1600/4728 [00:50<01:24, 36.89it/s, 
+]Collecting BMN metrics:  34%|███▍      | 1616/4728 [00:50<01:22, 37.61it/s, 
+]Collecting BMN metrics:  35%|███▍      | 1632/4728 [00:51<01:24, 36.46it/s, 
+]Collecting BMN metrics:  35%|███▍      | 1648/4728 [00:51<01:22, 37.41it/s, 
+]Collecting BMN metrics:  35%|███▌      | 1664/4728 [00:52<01:19, 38.37it/s, 
+]Collecting BMN metrics:  36%|███▌      | 1680/4728 [00:52<01:18, 38.87it/s, 
+]Collecting BMN metrics:  36%|███▌      | 1696/4728 [00:52<01:21, 37.23it/s, 
+]Collecting BMN metrics:  36%|███▌      | 1712/4728 [00:53<01:22, 36.77it/s, 
+]Collecting BMN metrics:  37%|███▋      | 1728/4728 [00:53<01:24, 35.70it/s, 
+]Collecting BMN metrics:  37%|███▋      | 1744/4728 [00:54<01:20, 36.90it/s, 
+]Collecting BMN metrics:  37%|███▋      | 1760/4728 [00:54<01:18, 37.59it/s, 
+]Collecting BMN metrics:  38%|███▊      | 1776/4728 [00:55<01:22, 35.82it/s, 
+]Collecting BMN metrics:  38%|███▊      | 1792/4728 [00:55<01:19, 36.95it/s, 
+]Collecting BMN metrics:  38%|███▊      | 1808/4728 [00:55<01:17, 37.91it/s, 
+]Collecting BMN metrics:  39%|███▊      | 1824/4728 [00:56<01:16, 37.93it/s, 
+]Collecting BMN metrics:  39%|███▉      | 1840/4728 [00:56<01:19, 36.55it/s, 
+]Collecting BMN metrics:  39%|███▉      | 1856/4728 [00:57<01:16, 37.57it/s, 
+]Collecting BMN metrics:  40%|███▉      | 1872/4728 [00:57<01:19, 35.91it/s, 
+]Collecting BMN metrics:  40%|███▉      | 1888/4728 [00:58<01:16, 36.98it/s, 
+]Collecting BMN metrics:  40%|████      | 1904/4728 [00:58<01:14, 37.72it/s, 
+]Collecting BMN metrics:  41%|████      | 1920/4728 [00:58<01:17, 36.47it/s, 
+]Collecting BMN metrics:  41%|████      | 1936/4728 [00:59<01:14, 37.50it/s, 
+]Collecting BMN metrics:  41%|████▏     | 1952/4728 [00:59<01:13, 37.88it/s, 
+]Collecting BMN metrics:  42%|████▏     | 1968/4728 [01:00<01:12, 38.27it/s, 
+]Collecting BMN metrics:  42%|████▏     | 1984/4728 [01:00<01:14, 36.73it/s, 
+]Collecting BMN metrics:  42%|████▏     | 2000/4728 [01:01<01:12, 37.47it/s, 
+]Collecting BMN metrics:  43%|████▎     | 2016/4728 [01:01<01:14, 36.37it/s, 
+]Collecting BMN metrics:  43%|████▎     | 2032/4728 [01:01<01:12, 37.11it/s, 
+]Collecting BMN metrics:  43%|████▎     | 2048/4728 [01:02<01:10, 37.92it/s, 
+]Collecting BMN metrics:  44%|████▎     | 2064/4728 [01:02<01:13, 36.39it/s, 
+]Collecting BMN metrics:  44%|████▍     | 2080/4728 [01:03<01:11, 37.28it/s, 
+]Collecting BMN metrics:  44%|████▍     | 2096/4728 [01:03<01:10, 37.27it/s, 
+]Collecting BMN metrics:  45%|████▍     | 2112/4728 [01:04<01:08, 37.98it/s, 
+]Collecting BMN metrics:  45%|████▌     | 2128/4728 [01:04<01:10, 36.70it/s, 
+]Collecting BMN metrics:  45%|████▌     | 2144/4728 [01:04<01:08, 37.46it/s, 
+]Collecting BMN metrics:  46%|████▌     | 2160/4728 [01:05<01:11, 36.11it/s, 
+]Collecting BMN metrics:  46%|████▌     | 2176/4728 [01:05<01:08, 37.25it/s, 
+]Collecting BMN metrics:  46%|████▋     | 2192/4728 [01:06<01:06, 37.99it/s, 
+]Collecting BMN metrics:  47%|████▋     | 2208/4728 [01:06<01:09, 36.31it/s, 
+]Collecting BMN metrics:  47%|████▋     | 2224/4728 [01:07<01:07, 37.22it/s, 
+]Collecting BMN metrics:  47%|████▋     | 2240/4728 [01:07<01:05, 38.09it/s, 
+]Collecting BMN metrics:  48%|████▊     | 2256/4728 [01:07<01:03, 38.75it/s, 
+]Collecting BMN metrics:  48%|████▊     | 2272/4728 [01:08<01:06, 36.99it/s, 
+]Collecting BMN metrics:  48%|████▊     | 2288/4728 [01:08<01:04, 37.86it/s, 
+]Collecting BMN metrics:  49%|████▊     | 2304/4728 [01:09<01:03, 38.39it/s, 
+]Collecting BMN metrics:  49%|████▉     | 2320/4728 [01:09<01:06, 36.43it/s, 
+]Collecting BMN metrics:  49%|████▉     | 2336/4728 [01:10<01:03, 37.42it/s, 
+]Collecting BMN metrics:  50%|████▉     | 2352/4728 [01:10<01:02, 38.07it/s, 
+]Collecting BMN metrics:  50%|█████     | 2368/4728 [01:11<01:06, 35.58it/s, 
+]Collecting BMN metrics:  50%|█████     | 2384/4728 [01:11<01:03, 36.87it/s, 
+]Collecting BMN metrics:  51%|█████     | 2400/4728 [01:11<01:01, 37.77it/s, 
+]Collecting BMN metrics:  51%|█████     | 2416/4728 [01:12<01:03, 36.46it/s, 
+]Collecting BMN metrics:  51%|█████▏    | 2432/4728 [01:12<01:01, 37.47it/s, 
+]Collecting BMN metrics:  52%|█████▏    | 2448/4728 [01:13<00:59, 38.18it/s, 
+]Collecting BMN metrics:  52%|█████▏    | 2464/4728 [01:13<01:03, 35.49it/s, 
+]Collecting BMN metrics:  52%|█████▏    | 2480/4728 [01:14<01:01, 36.57it/s, 
+]Collecting BMN metrics:  53%|█████▎    | 2496/4728 [01:14<00:59, 37.47it/s, 
+]Collecting BMN metrics:  53%|█████▎    | 2512/4728 [01:14<01:01, 36.18it/s, 
+]Collecting BMN metrics:  53%|█████▎    | 2528/4728 [01:15<00:59, 37.11it/s, 
+]Collecting BMN metrics:  54%|█████▍    | 2544/4728 [01:15<00:57, 38.00it/s, 
+]Collecting BMN metrics:  54%|█████▍    | 2560/4728 [01:16<00:56, 38.47it/s, 
+]Collecting BMN metrics:  54%|█████▍    | 2576/4728 [01:16<00:58, 36.70it/s, 
+]Collecting BMN metrics:  55%|█████▍    | 2592/4728 [01:17<00:57, 37.42it/s, 
+]Collecting BMN metrics:  55%|█████▌    | 2608/4728 [01:17<00:58, 36.23it/s, 
+]Collecting BMN metrics:  55%|█████▌    | 2624/4728 [01:17<00:57, 36.60it/s, 
+]Collecting BMN metrics:  56%|█████▌    | 2640/4728 [01:18<00:57, 36.54it/s, 
+]Collecting BMN metrics:  56%|█████▌    | 2656/4728 [01:18<00:57, 35.74it/s, 
+]Collecting BMN metrics:  57%|█████▋    | 2672/4728 [01:19<00:55, 36.97it/s, 
+]Collecting BMN metrics:  57%|█████▋    | 2688/4728 [01:19<00:54, 37.76it/s, 
+]Collecting BMN metrics:  57%|█████▋    | 2704/4728 [01:20<00:52, 38.25it/s, 
+]Collecting BMN metrics:  58%|█████▊    | 2720/4728 [01:20<00:54, 36.60it/s, 
+]Collecting BMN metrics:  58%|█████▊    | 2736/4728 [01:20<00:53, 37.57it/s, 
+]Collecting BMN metrics:  58%|█████▊    | 2752/4728 [01:21<00:54, 36.11it/s, 
+]
